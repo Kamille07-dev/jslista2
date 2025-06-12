@@ -11,11 +11,16 @@
 
     <script>
         let img = document.getElementById("imagem")
-        const img2 = 
+
         img.addEventListener("mouseover", () =>
-    {
-        img.textContent = "aaaaaaahhhhh"
-    })
+        {
+            img.src = "mario.png"
+        })
+
+        img.addEventListener("mouseout", () =>
+        {
+            img.src = "Furia_Esports_logo.png"
+        })
     </script>
 </body>
 </html>

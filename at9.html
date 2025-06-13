@@ -1,0 +1,35 @@
+<!-- Exibir Data e Hora Atual
+Objetivo: Mostrar os dados e a hora atual na página.
+
+Tarefa: Crie um botão que, quando clicado, exiba os dados e a hora atual em um parágrafo na página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="botao">
+        Mostrar horas
+    </button>
+
+    <p id="hr"></p>
+
+    <script>
+        let btn = document.getElementById("botao")
+        
+        btn.addEventListener("click", () =>
+    {
+        let hora = document.getElementById("hr")
+        var agora = new Date();
+        var horas = agora.getHours();
+        var minutos = agora.getMinutes();
+        var segundos = agora.getSeconds();
+
+        hora.textContent = "A hora atual é: " + horas + ":" + minutos + ":" + segundos;
+    })
+    </script>
+</body>
+</html>

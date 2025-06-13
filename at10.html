@@ -1,0 +1,34 @@
+<!-- Simulação de Carregamento
+Objetivo: Exibir uma barra de progresso que simule o carregamento de uma tarefa.
+
+Tarefa: Crie um botão que, ao ser clicado, inicie uma barra de progresso que vai preenchendo até atingir 100%. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="botao">Progresso</button>
+    <progress id="progresso" value="0" max="100"></progress>
+
+    <script>
+        let btn = document.getElementById('botao');
+        const barra = document.getElementById('progresso');
+
+        btn.addEventListener("click", () => {
+
+            const intervalo = setInterval(() => {
+                if (barra.value<=100) {
+                    barra.value = barra.value +5;
+                }
+
+                else{
+                    barra.value = 100;
+                }
+            }, 100);    
+        });
+    </script>
+</body>
+</html>

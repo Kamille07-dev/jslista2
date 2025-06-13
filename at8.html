@@ -1,0 +1,41 @@
+<!-- Reordenar elementos de uma lista
+Objetivo: Reordenar os itens de uma lista ao clicar em um botão.
+
+Tarefa: Desenvolva uma página com uma lista de 5 itens. Adicione um botão que, ao ser clicado, reordene os itens aleatoriamente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+    </ul>
+
+    <button id="botao">Reorganizar</button>
+
+
+    <script>
+        let btn = document.getElementById("botao")
+        let lista = document.getElementById("lista")
+        
+        btn.addEventListener("click", () =>
+    {
+        const itens = lista.querySelectorAll("li");
+
+        for (let i = itens.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        lista.appendChild(itens[j]);
+        }
+    })
+    
+    </script>
+</body>
+</html>

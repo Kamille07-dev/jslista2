@@ -1,0 +1,47 @@
+<!-- Adição e Remoção de Elementos
+Objetivo: Adicionar e remover itens de uma lista.
+
+Tarefa: Crie uma lista de itens e dois botões: um para adicionar novos itens à lista e outro para remover o último item adicionado. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lis">
+        <li class="item">nsei</li>
+        <li class="item">oq</li>
+        <li class="item">escrever</li>
+    </ul>
+
+    <button id="botaoad">
+        Clique aqui para add
+    </button>
+
+    <button id="botaor">
+        Clique aqui para remover
+    </button>
+
+    <script>
+        let add = document.getElementById("botaoad")
+        let remov = document.getElementById("botaor")
+        let lista = document.getElementById("lis")
+
+        
+        add.addEventListener("click", () =>
+    {
+        const item = document.createElement("li");
+        item.textContent = "a";
+        lista.appendChild(item);
+    })
+
+    remov.addEventListener("click", () =>
+    {
+        lista.removeChild(lista.lastElementChild);
+    })
+    </script>
+</body>
+</html>

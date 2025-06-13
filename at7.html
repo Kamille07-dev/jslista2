@@ -4,40 +4,39 @@ Objetivo: Validar um campo de texto ao submeter um formulário.
 Tarefa: Crie um formulário com um campo de entrada de texto e um botão de "Enviar". Se o campo estiver vazio ao submeter o formulário, exiba uma mensagem de erro abaixo do campo. -->
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Validação de Formulário</title>
+  <title>Document</title>
 </head>
 <body>
-  <h1>Formulário de Validação Simples</h1>
+  <p id="paragrafo">Digite algo</p>
 
-  <form id="meuFormulario">
-    <p id="nome">Digite algo:</p>
-    <input type="text" id="nome" name="nome">
+  <input type="text" id="entrada">
 
-    
-    <button type="submit">Enviar</button>
-    
-    <p id="mensagemErro"></p>
-  </form>
+  <button id="botao">Enviar</button>
+
+  <p id="erro"></p>
 
   <script>
-    const formulario = document.getElementById('meuFormulario');
-    const campoNome = document.getElementById('nome');
-    const mensagemErro = document.getElementById('mensagemErro');
 
-    formulario.addEventListener('submit', function(evento) {
-      evento.preventDefault(); // Impede o envio real do formulário
+    let ent = document.getElementById("entrada");
+    let btn = document.getElementById("botao");
+    let er = document.getElementById("erro");
+    
 
-      if (campoNome.value.trim() === '') {
-        mensagemErro.textContent = 'Por favor, preencha o campo antes de enviar.';
-      } else {
-        mensagemErro.textContent = ''; // Limpa mensagem de erro
-        alert('Formulário enviado com sucesso!');
-        formulario.reset(); // Limpa o formulário
+    btn.addEventListener("click", () => {
+      console.log("oi")
+
+      if (ent.value.trim() === "") {
+        er.textContent = "Erro";
       }
+
+      else{
+        er.textContent = "";
+      }
+        
     });
   </script>
 </body>
